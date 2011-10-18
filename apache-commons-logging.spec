@@ -4,7 +4,7 @@
 
 Name:           apache-%{short_name}
 Version:        1.1.1
-Release:        16
+Release:        17
 Summary:        Apache Commons Logging
 License:        ASL 2.0
 Group:          Development/Java

@@ -4,7 +4,7 @@
 
 Name:           apache-%{short_name}
 Version:        1.1.1
-Release:        17
+Release:        16
 Summary:        Apache Commons Logging
 License:        ASL 2.0
 Group:          Development/Java
@@ -19,7 +19,7 @@ Patch1:         %{short_name}-eclipse-manifest.patch
 BuildArch:      noarch
 BuildRequires:  maven
 BuildRequires:  java-devel >= 0:1.6.0
-BuildRequires:  jpackage-utils >= 0:1.7.5
+BuildRequires:  jpackage-utils >= 0:1.6
 BuildRequires:  avalon-framework >= 4.3
 BuildRequires:  avalon-logkit
 BuildRequires:  apache-commons-parent
@@ -29,9 +29,9 @@ BuildRequires:  maven-site-plugin
 BuildRequires:  servlet25
 
 Requires:       java >= 0:1.6.0
-Requires:       jpackage-utils >= 0:1.7.5
-Requires(post): jpackage-utils >= 0:1.7.5
-Requires(postun):jpackage-utils >= 0:1.7.5
+Requires:       jpackage-utils >= 0:1.6
+Requires(post): jpackage-utils
+Requires(postun):jpackage-utils
 
 # This should go away with F-17
 Provides:       jakarta-%{short_name} = 0:%{version}-%{release}
@@ -51,7 +51,7 @@ logging implementation.
 %package        javadoc
 Summary:        API documentation for %{name}
 Group:          Development/Java
-Requires:       jpackage-utils >= 0:1.7.5
+Requires:       jpackage-utils
 
 Obsoletes:      jakarta-%{short_name}-javadoc <= 0:1.0.4
 

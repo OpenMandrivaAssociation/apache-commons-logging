@@ -86,21 +86,21 @@ mvn-rpmbuild -X -Dmaven.local.depmap.file="%{SOURCE1}" \
 
 %install
 # jars
-install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
-install -p -m 644 target/%{short_name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
-install -p -m 644 target/%{short_name}-api-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-api.jar
-install -p -m 644 target/%{short_name}-adapters-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-adapters.jar
+install -d -m 755 %{buildroot}%{_javadir}
+install -p -m 644 target/%{short_name}-%{version}.jar %{buildroot}%{_javadir}/%{name}.jar
+install -p -m 644 target/%{short_name}-api-%{version}.jar %{buildroot}%{_javadir}/%{name}-api.jar
+install -p -m 644 target/%{short_name}-adapters-%{version}.jar %{buildroot}%{_javadir}/%{name}-adapters.jar
 
-pushd $RPM_BUILD_ROOT%{_javadir}
+pushd %{buildroot}%{_javadir}
 for jar in %{name}*; do
     ln -sf ${jar} `echo $jar| sed "s|apache-||g"`
 done
 popd
 
 # pom
-install -d -m 755 $RPM_BUILD_ROOT%{_mavenpomdir}
-install -pm 644 pom.xml $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP-%{short_name}.pom
-install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP-%{short_name}-api.pom
+install -d -m 755 %{buildroot}%{_mavenpomdir}
+install -pm 644 pom.xml %{buildroot}/%{_mavenpomdir}/JPP-%{short_name}.pom
+install -pm 644 %{SOURCE2} %{buildroot}/%{_mavenpomdir}/JPP-%{short_name}-api.pom
 
 %add_to_maven_depmap org.apache.commons %{short_name} %{version} JPP %{short_name}
 %add_to_maven_depmap org.apache.commons %{short_name}-api %{version} JPP %{short_name}-api
@@ -114,8 +114,8 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP-%{short_name}-api
 
 
 # javadoc
-install -d -m 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}
-cp -pr target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
+install -d -m 755 %{buildroot}%{_javadocdir}/%{name}
+cp -pr target/site/apidocs/* %{buildroot}%{_javadocdir}/%{name}
 
 # -----------------------------------------------------------------------------
 %post

@@ -1,4 +1,4 @@
 sources:
-  "commons-logging-1.1.1-src.tar.gz:"	9f5197e32d8b94dfecbb13d4099063b7b2743c96
-  "commons-logging-api-1.1.pom:"	825395875e4a7ac53277f5f746085a3e13a04248
-  "commons-logging.depmap:"	128fa0c97423a2b5cf67e29d52ae7e7ebd1bfb03
+  commons-logging-1.1.1-src.tar.gz: 9f5197e32d8b94dfecbb13d4099063b7b2743c96
+  commons-logging-api-1.1.pom: 825395875e4a7ac53277f5f746085a3e13a04248
+  commons-logging.depmap: 128fa0c97423a2b5cf67e29d52ae7e7ebd1bfb03

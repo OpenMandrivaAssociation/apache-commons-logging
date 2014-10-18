@@ -4,7 +4,7 @@
 
 Name:           apache-%{short_name}
 Version:        1.1.3
-Release:        7.1%{?dist}
+Release:        7.2%{?dist}
 Summary:        Apache Commons Logging
 License:        ASL 2.0
 URL:            http://commons.apache.org/%{base_name}
@@ -23,6 +23,7 @@ BuildRequires:  mvn(org.apache.maven.plugins:maven-failsafe-plugin)
 BuildRequires:  mvn(org.apache.maven.plugins:maven-dependency-plugin)
 BuildRequires:  mvn(org.codehaus.mojo:build-helper-maven-plugin)
 
+Provides:	jakarta-commons-logging = %{version}-%{release}
 BuildArch:      noarch
 
 

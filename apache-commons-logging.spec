@@ -11,6 +11,7 @@ Source0:        http://www.apache.org/dist/commons/%{base_name}/source/%{short_n
 Source1:        http://mirrors.ibiblio.org/pub/mirrors/maven2/%{short_name}/%{short_name}-api/1.1/%{short_name}-api-1.1.pom
 
 BuildRequires:	jdk-current
+BuildRequires:	jmod(javax.servlet)
 BuildRequires:	javapackages-local
 
 BuildArch:      noarch

@@ -3,7 +3,7 @@
 
 Name:           apache-%{short_name}
 Version:        1.2
-Release:        1
+Release:        2
 Summary:        Apache Commons Logging
 License:        ASL 2.0
 URL:            http://commons.apache.org/%{base_name}
@@ -85,6 +85,7 @@ ln -s modules/org.apache.commons.logging-%{version}.jar %{buildroot}%{_javadir}/
 ln -s modules/org.apache.commons.logging-%{version}.jar %{buildroot}%{_javadir}/org.apache.commons.logging.jar
 ln -s modules/org.apache.commons.logging-%{version}.jar %{buildroot}%{_javadir}/commons-logging-api.jar
 ln -s modules/org.apache.commons.logging-%{version}.jar %{buildroot}%{_javadir}/commons-logging-adapters.jar
+ln -s modules/org.apache.commons.logging-%{version}.jar %{buildroot}%{_javadir}/commons-logging.jar
 sed -e 's,1\.1,%{version},g' %{S:1} >%{buildroot}%{_mavenpomdir}/%{short_name}-api-%{version}.pom
 %add_maven_depmap %{short_name}-api-%{version}.pom org.apache.commons.logging-%{version}.jar
 cp -a src/main/java/docs %{buildroot}%{_javadocdir}/%{name}

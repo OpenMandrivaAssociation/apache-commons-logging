@@ -3,7 +3,7 @@
 
 Name:           apache-%{short_name}
 Version:        1.2
-Release:        2
+Release:        3
 Summary:        Apache Commons Logging
 License:        ASL 2.0
 URL:            http://commons.apache.org/%{base_name}

@@ -6,7 +6,7 @@ Version:        1.2
 Release:        3
 Summary:        Apache Commons Logging
 License:        ASL 2.0
-URL:            http://commons.apache.org/%{base_name}
+URL:            https://commons.apache.org/%{base_name}
 Source0:        http://www.apache.org/dist/commons/%{base_name}/source/%{short_name}-%{version}-src.tar.gz
 Source1:        http://mirrors.ibiblio.org/pub/mirrors/maven2/%{short_name}/%{short_name}-api/1.1/%{short_name}-api-1.1.pom
 

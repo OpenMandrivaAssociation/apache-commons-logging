@@ -10,8 +10,11 @@ Source0:	https://archive.apache.org/dist/commons/logging/source/commons-logging-
 BuildArch:	noarch
 BuildRequires:	mvn(org.apache.commons:commons-parent:pom::)
 # Optional adapters. builddep does not emit optional dependencies.
+# The installed POMs cannot be read unless their parent POMs are installed.
+BuildRequires:	mvn(org.slf4j:slf4j-parent:pom::)
 BuildRequires:	mvn(org.slf4j:slf4j-api)
 BuildRequires:	mvn(log4j:log4j)
+BuildRequires:	mvn(net.java:jvnet-parent:pom::)
 BuildRequires:	mvn(javax.servlet:javax.servlet-api)
 # Literal, so the first rpmbuild -bs records them before sysjar is installed.
 BuildRequires:	maven
